@@ -5,7 +5,52 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
+<head>
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <link href="~/css/styles.min.css" rel="stylesheet" />
+</head>
+
+<section>
+    <div class="leaves">
+        <div class="set">
+            <div><img src="~/images/leaf_01.png"></div>
+            <div><img src="~/images/leaf_02.png"></div>
+            <div><img src="~/images/leaf_03.png"></div>
+            <div><img src="~/images/leaf_04.png"></div>
+            <div><img src="~/images/leaf_01.png"></div>
+            <div><img src="~/images/leaf_02.png"></div>
+            <div><img src="~/images/leaf_03.png"></div>
+            <div><img src="~/images/leaf_04.png"></div>
+        </div>
+    </div>
+    <img src="~/images/bg.jpg" class="bg">
+    <img src="~/images/girl.png" class="girl">
+    <div class="login">
+        <h2>Sign In</h2>
+        <div class="InputBox">
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="InputBox">
+            <input type="password" placeholder="Password">
+        </div>
+        <div class="InputBox">
+            <input type="submit" value="Login" id="btn">
+        </div>
+        <div class="group">
+            <a href="#">Forget Password</a>
+            <a href="#">Sign Up</a>
+        </div>
+        <img src="~/images/trees.png" class="trees">
+    </div>
+</section>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+@*<h1>@ViewData["Title"]</h1>
 <div class="row">
     <div class="col-md-4">
         <section>
@@ -76,8 +121,5 @@
             }
         </section>
     </div>
-</div>
+</div>*@
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
