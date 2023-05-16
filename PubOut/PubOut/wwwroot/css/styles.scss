@@ -62,6 +62,7 @@ section .girl {
         transform: translateX(calc(100% + 100vh)) rotateY(180deg);
     }
 }
+
 .login {
     position: relative;
     padding: 60px;
@@ -76,6 +77,7 @@ section .girl {
     flex-direction: column;
     box-shadow: 0 25px 50px rgba(0,0,0,0.1);
 }
+
 .login h2 {
     position: relative;
     width: 100%;
@@ -85,6 +87,7 @@ section .girl {
     color: #8f2c24;
     margin-bottom: 10px;
 }
+
 .login .InputBox {
     position: relative;
 }
@@ -100,6 +103,7 @@ section .girl {
     border: none;
     margin-bottom: 30px;
 }
+
 .login .InputBox input ::placeholder {
     color: #8f2c24;
 }

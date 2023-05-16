@@ -1,0 +1,14 @@
+﻿<title>@ViewData["Title"] - PubOut</title>
+
+<div>
+    <body>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+        <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+
+        @await RenderSectionAsync("scripts", required: false)
+    </body>
+</div>
