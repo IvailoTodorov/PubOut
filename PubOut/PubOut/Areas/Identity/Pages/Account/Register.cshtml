@@ -3,11 +3,59 @@
 @{
     ViewData["Title"] = "Register";
 }
+<head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link href="~/css/register.css" rel="stylesheet" />
+</head>
+<body>
 
-<h1>@ViewData["Title"]</h1>
+    <div class="container">
+        <div class="tabs">
+            <ul>
+                <li id="register"><a>Register</a></li>
+                <li id="reset"><a>Rest</a></li>
+                <li id="login"><a>Login</a></li>
+            </ul>
+        </div>
+        <div class="forms">
+            <div class="register">
+                <p>Sign up free with in seconds.</p>
 
+                <form method="post" name="register" action="signup.jsp">
+                    <input class="field" name="uname" required type="text" placeholder="Username" />
+                    <input class="field" name="email" required type="email" placeholder="myusername@domain.com" />
+                    <input id="p1" class="field" name="pass" required type="password" placeholder="Password" onchange="form1.p2.pattern=this.value;" />
+                    <input id="p2" class="field" name="pass_confirm" required type="password" placeholder="Rewrite Password" required />
+                    <input type="submit" onclick="checkpass()" value="Sign Up" />
+                </form>
+            </div>
 
-<div class="row">
+            <div class="login">
+                <p>SignIn in your account.</p>
+
+                <form method="post" name="register" action="login.jsp">
+                    <input class="field" name="email" required type="email" placeholder="* myusername@domain.com" />
+                    <input class="field" name="pass" required type="password" name="pass" placeholder="* Password" />
+                    <input type="checkbox" name="terms"> <em>Keep me logged in </em> <input type="submit" value="Login" />
+                </form>
+            </div>
+
+            <div class="reset">
+                <p>Reset Your Password.</p>
+
+                <form method="post" name="register" action="reset.jsp">
+                    <input class="field" name="email" type="email" placeholder="*myusername@domain.com" required />
+                    <input class="field" name="pass_old" type="password" placeholder="*Old Password" required />
+                    <input class="field" name="pass_new" type="password" placeholder="*New Password" required />
+                    <div class="btn">
+                        <input type="submit" value="Get New One !" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+@*<div class="row">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Create a new account.</h2>
@@ -72,7 +120,23 @@
         </section>
     </div>
 </div>
-
+*@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            $('#register').on('click', function () {
+                $('.register').siblings().hide();
+                $('.register').slideToggle();
+            });
+            $('#login').on('click', function () {
+                $('.login').siblings().hide();
+                $('.login').slideToggle();
+            });
+            $('#reset').on('click', function () {
+                $('.reset').siblings().hide();
+                $('.reset').slideToggle();
+            });
+        });
+    </script>
 }
